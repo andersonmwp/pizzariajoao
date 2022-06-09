@@ -17,6 +17,60 @@ html, body {
     color: #fff;
 }
 
+/* Home */
+
+#main-banner {
+    background-image: url(../img/pizza-banner.jpg);
+    height: 300px;
+    width: 100%;
+    background-position: center;
+    background-size: cover;
+    background-position-y: -300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#main-container {
+    margin-bottom: 100px;
+    padding: 50px 0;
+    text-align: center;
+    min-height: 50%;
+}
+
+#main-container h2 {
+    margin-bottom: 30px;
+}
+
+.row {
+    margin: 0;
+}
+
+#pizza-form {
+    width: 550px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+#pizza-form label {
+    font-weight: bold;
+}
+
+.btn.btn-primary {
+    background-color: #000;
+    border-color: #000;
+}
+
+#main-banner h1 {
+    color: #fff;
+    background-color: #000;
+    text-align: center;
+    padding: 30px;
+    text-transform: uppercase;
+    width: 550px;
+    font-size: 50px;
+}
+
 /* Footer */
 
 footer {
