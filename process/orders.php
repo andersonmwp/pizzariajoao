@@ -8,7 +8,7 @@
 
         $pedidosQuery = $conn->query("SELECT * FROM pedidos;");
 
-        $pedidos = $pedidosQuery->fethAll();
+        $pedidos = $pedidosQuery->fetchAll();
 
         $pizzas = [];
 
@@ -18,10 +18,10 @@
             $pizza = [];
 
             // Define um array para a pizzza
-            $pizza[id] = $pedido["pizza_id"];
+            $pizza["id"] = $pedido["pizza_id"];
 
             // Resgatando a pizza
-            $pizzaQuery $conn->prepare("SELECT * FROM pizzas WHERE id = :pizza_id;");
+            $pizzaQuery = $conn->prepare("SELECT * FROM pizzas WHERE id = :pizza_id");
 
             $pizzaQuery->bindParam(":pizza_id", $pizza["id"]);
 
@@ -30,7 +30,7 @@
             $pizzaData = $pizzaQuery->fetch(PDO::FETCH_ASSOC);
 
             // Resgatando a borda
-            $bordaQuery $conn->prepare("SELECT * FROM bordas WHERE id = :borda_id;");
+            $bordaQuery = $conn->prepare("SELECT * FROM bordas WHERE id = :borda_id");
 
             $bordaQuery->bindParam(":borda_id", $pizzaData["borda_id"]);
 
@@ -41,7 +41,7 @@
             $pizza["borda"] = $borda["tipo"];
 
             // Resgatando a massa
-            $massaQuery $conn->prepare("SELECT * FROM massas WHERE id = :massa_id;");
+            $massaQuery = $conn->prepare("SELECT * FROM massas WHERE id = :massa_id");
 
             $massaQuery->bindParam(":massa_id", $pizzaData["massa_id"]);
 
@@ -52,7 +52,7 @@
             $pizza["massa"] = $massa["tipo"];
 
             // Resgatando os sabores
-            $saboresQuery $conn->prepare("SELECT * FROM pizza_sabor WHERE pizza_id = :pizza_id;");
+            $saboresQuery = $conn->prepare("SELECT * FROM pizza_sabor WHERE pizza_id = :pizza_id");
 
             $saboresQuery->bindParam(":pizza_id", $pizza["id"]);
 
@@ -63,7 +63,7 @@
             // Resgatando o nome dos sabores
             $saboresDaPizza = [];
 
-            $saborQuery = $conn->prepare("SELECT * FROM sabores WHERE id = :sabor_id;");
+            $saborQuery = $conn->prepare("SELECT * FROM sabores WHERE id = :sabor_id");
             
             foreach($sabores as $sabor) {
 
