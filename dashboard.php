@@ -36,7 +36,7 @@
                                         </ul>
                                     </td>
                                     <td>
-                                        <form action="process/ordes.php" method="POST" class="form-group update-form">
+                                        <form action="process/orders.php" method="POST" class="form-group update-form">
                                             <input type="hidden" name="type" value="update">
                                             <input type="hidden" name="id" value="<?= $pizza["id"] ?>">
                                             <select name="status" class="form-control status-input">
